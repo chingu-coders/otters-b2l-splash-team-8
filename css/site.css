@@ -1,0 +1,14 @@
+body {
+  /* To accommodate navbar-fixed*/
+  margin-top: 50px;
+}
+
+footer {
+  margin-top: 70px;
+}
+
+#banner {
+  background: url("../img/banner.png");
+  background-size: cover;
+  color: white;
+}
