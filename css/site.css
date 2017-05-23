@@ -1,0 +1,27 @@
+:root {
+  /* To accommodate navbar-fixed*/
+  --clear-top: 50px;
+}
+
+body {
+  margin-top: var(--clear-top);
+}
+
+/* So that headers anchors are not blocked by navbar-fixed - https://css-tricks.com/hash-tag-links-padding/ */
+.anchor:before {
+  display: block;
+  content: " ";
+  margin-top: calc(-1 * var(--clear-top));
+  height: var(--clear-top);
+  visibility: hidden;
+}
+
+footer {
+  margin-top: 70px;
+}
+
+#banner {
+  background: url("../img/banner.png");
+  background-size: cover;
+  color: white;
+}
