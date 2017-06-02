@@ -1,0 +1,178 @@
+//override bootstrap styling, imported by site.less
+
+//original css
+:root {
+  /* To accommodate navbar-fixed*/
+  --clear-top: 50px;
+}
+
+body {
+  margin-top: var(--clear-top);
+  font-family: @paypal-font;
+  font-weight: 400;
+  font-size: @font-size-base;
+}
+
+/* So that headers anchors are not blocked by navbar-fixed - https://css-tricks.com/hash-tag-links-padding/ */
+.anchor:before {
+  display: block;
+  content: " ";
+  margin-top: ~"calc(-1 * var(--clear-top))";
+  height: var(--clear-top);
+  visibility: hidden;
+}
+
+footer {
+  margin-top: 70px;
+}
+
+#banner {
+  background: url("../img/banner.png");
+  background-size: cover;
+  color: white;
+}
+
+//@media in one place
+
+
+//jumbotron
+
+.jumbotron {
+  padding-top:    @jumbotron-padding; //30px
+  padding-bottom: @jumbotron-padding;
+  margin-bottom: @jumbotron-padding;
+  color: @paypal-button;
+  background-color: @jumbotron-bg; //#eee
+  position: relative;
+  height: 248px;
+
+  @media screen and (min-width: 768px) {
+    height: 315px;
+  }
+  //at certain breakpoint, jumbotron background becomes smaller (248)
+
+  h1,
+  .h1 {
+    font-size: @font-size-h1;
+  }
+
+  p {
+    margin-bottom: (@jumbotron-padding / 2);
+    font-size: @font-size-small;
+    margin-bottom: 30px;
+  }
+
+ .container {
+    border-radius: @border-radius-large; // Only round corners at higher resolutions if contained in a container, 6px
+    padding-left:  (@grid-gutter-width / 2); //15px
+    padding-right: (@grid-gutter-width / 2);
+    width: 400px;
+    position: absolute;
+    left: 10px;
+  }
+
+  .btn {
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: @font-size-small;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @paypal-basic;
+      text-decoration: none;
+      background-color: @paypal-button;
+    }
+  }
+
+
+  @media screen and (min-width: @screen-sm-min) { //768px
+    padding-top:    (@jumbotron-padding * 1.6); //48
+    padding-bottom: (@jumbotron-padding * 1.6);
+
+    .container {
+      padding-left:  @jumbotron-padding; //30
+      padding-right: @jumbotron-padding;
+      width: 400px;
+      position: absolute;
+      left: 10px;
+    }
+  }
+}
+
+//navbar
+.navbar{
+  min-height: (@navbar-height + 10px);
+  max-height: 72px;
+  display: inline-block;
+}
+
+.navbar-brand img{
+  height: 30px;
+  width: 30px;
+}
+
+.navbar-default {
+  background-color: @paypal-basic;
+  border-color: darken(@paypal-basic, 6.5%);
+
+  .navbar-nav {
+    > a {
+      color: @paypal-button;
+      background-color: @paypal-basic;
+      border: 1px solid #fff;
+      border-radius: 30px;
+      font-size: (@font-size-small - 2px);
+      font-weight: 600;
+      margin-right: 10px;
+
+      &:hover,
+      &:focus {
+        background-color: fade(@paypal-hover, 25%);
+        box-shadow: inset 0 0 0 2px #fff;
+      }
+    }
+  }
+}
+
+//page links
+.list-inline {
+  margin-bottom: -5px;
+  margin-left: 10px;
+
+  li a{
+  color: @paypal-basic;
+  font-weight: 600;
+  margin: 10px;
+  font-size: @font-size-small;
+  }
+
+    &:hover, &:active, &:focus{
+    color: #005ea6;
+    }
+
+    &:visited{
+    color: @paypal-basic;
+    }
+}
+
+
+//::before
+//border
+//change link size
+
+/* To fix login button going to second line, I changed bootstrap grid-float-breakpoint
+(the point at which the navbar becomes uncollapsed) to 1px in site variables document. */
+
+/* functionality notes TODO
+
+  the navbar when the screen is bigger (probably at 768px) becomes fixed, anything lower than that
+  its just static top, not fixed.
+
+  ::before is used to create page dividing lines before each new div. the color of the element is #b7bcbf
+
+  add paypal button on bottom of page background color darkens- hover color
+  footer link hover effects
+
+*/
+
