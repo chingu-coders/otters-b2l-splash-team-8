@@ -3,16 +3,17 @@
 //original css
 :root {
   /* To accommodate navbar-fixed*/
-  --clear-top: 50px;
+  --clear-top: 60px;
 }
 
 body {
   margin-top: var(--clear-top);
   font-family: @paypal-font;
-  font-weight: 400;
+  font-weight: @font-weight;
   font-size: @font-size-base;
   color: @paypal-text;
   background-color: @paypal-button;
+  word-spacing: 1px;
 }
 
 /* So that headers anchors are not blocked by navbar-fixed
@@ -64,9 +65,10 @@ body {
   }
 
   .btn {
-    font-weight: 600;
+    font-weight: @font-weight-bold;
     border-radius: 20px;
-    font-size: @font-size-small;
+    font-size: (@font-size-small - 2px);
+
 
     &:hover,
     &:focus,
@@ -98,11 +100,11 @@ body {
   .navbar-nav {
     > a {
       color: @paypal-button;
-      background-color: @paypal-basic;
+      background-color: transparent;
       border: 1px solid #fff;
       border-radius: 30px;
       font-size: (@font-size-small - 2px);
-      font-weight: 600;
+      font-weight: @font-weight-bold;
       margin-right: 10px;
 
       &:hover,
@@ -121,7 +123,7 @@ body {
 
   li a{
   color: @paypal-basic;
-  font-weight: 600;
+  font-weight: @font-weight-bold;
   margin: 10px;
   font-size: @font-size-small;
   }
@@ -231,7 +233,7 @@ hr{
 .numbers {
   width: 35px;
   height: 35px;
-  font-weight: 600;
+  font-weight: @font-weight-bold;
   display: inline-block;
   border: 1px solid #d8d8d8;
   text-align: center;
@@ -257,7 +259,7 @@ hr{
     background-color: @paypal-basic;
     padding: 13px 24px;
     font-size: @font-size-small;
-    font-weight: 600;
+    font-weight: @font-weight-bold;
 
     &:hover{
       background-color: @paypal-hover;
