@@ -1,5 +1,6 @@
 //overrides bootstrap styling, imported by site.less
 
+/* the start of project custom css */
 //original css
 :root {
   /* To accommodate navbar-fixed*/
@@ -166,7 +167,6 @@ hr{
   padding-top: 40px;
 
   img {
-    height: 252px;
     border-radius: 10px;
     border: 1px solid #eee;
   }
@@ -359,6 +359,10 @@ footer {
 
 
 @media screen and (max-width: 642px) {
+  .about-ex img {
+    margin-top: 15px;
+  }
+
   .copyright{
     text-align: left;
     position: absolute;
@@ -384,16 +388,11 @@ footer {
 
  .about-ex {
     padding-top: 5px;
-
-    img {
-      width: 672px;
-      height: 525px;
-    }
   }
 
   .about-container {
     padding-top: 5px;
-    max-height: 160px;
+    max-height: 150px;
     margin-bottom: 8px;
   }
   .navbar-position {
